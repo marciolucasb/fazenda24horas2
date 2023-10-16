@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Página de Transmissão</title>
+    <style>
+        body {
+            background-color: white; /* Fundo claro padrão */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        video {
+            width: 1402px; /* Largura definida como 1402 pixels */
+            height: 730px; /* Altura definida como 730 pixels */
+        }
+
+        /* Estilos para o modo noturno */
+        body.dark {
+            background-color: black; /* Fundo preto no modo noturno */
+        }
+
+        /* Estilos para o botão de alternância de modo noturno */
+        .toggle-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .toggle-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão de alternância de modo noturno -->
+    <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleDarkMode()">Modo Noturno</button>
+    </div>
+
+    <!-- Reprodutor de vídeo na resolução 1402x730 -->
+    <video controls>
+        <source src="http://localhost:8080/live/livestream.flv" type="video/flv">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>
